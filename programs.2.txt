@@ -1,0 +1,67 @@
+#program 1:
+
+A=int(input("enter no.of adults"))
+c=int(input("enter no.of childerns"))
+
+cost=(A*37550.0) + (c*(37550.0/3))
+cost+=0.07*cost
+cost-=0.1*cost
+
+print("total price of ticket",cost)
+
+******************************************
+
+# program 2:
+
+a = [int(x) for x in input('enter three number').split()]
+ans = 1
+if 7 in a:
+    if a.index(7)==2:
+        ans=-1
+    elif a.index(7)==0:
+        ans= a[1]*a[2]
+    else:
+        ans=a[2]
+else:
+    ans= a[0]*a[1]*a[2]
+print(ans)
+
+**********************************************
+
+# program 3:
+
+x=int(input("enter an no.of five rupee coins:"))
+y=int(input("enter an no.of one rupee coins:"))
+z=int(input("enter the amount to be paid:"))
+
+c_five = z//5
+c_one = z -(c_five*5)
+
+if ((x*5)+y)==z:
+        print("five rupee coins=",x ,'\t','one rupee coins=',y)
+elif c_five>x or c_one>y:
+    print(-1)
+else:
+    print("five rupee coins=",c_five ,'\t','one rupee coins=',c_one)
+
+***********************************************************************
+# program 4:
+
+H = int(input("enter an number of heads:"))
+L = int(input("enter no.of legs"))
+
+if L/2 == H:
+    C = H
+    R = 0
+    print("chickens=",H,'\t','rabbits =0')
+elif L/4 == H:
+    R = H
+    C =0
+    print("chickens=0",'\t','rabbits =',H)
+elif L%2!=0 or L%4!=0:
+    print("NO SOLUTION")
+else:
+    C = L//2
+    R = C//4
+    C = (H-R)
+    print("no.of chickens=",C,'\t','no.of rabbits=',R)

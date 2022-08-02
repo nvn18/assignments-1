@@ -1,0 +1,63 @@
+P(16):
+
+def isvowel(x):
+    for i in x:
+        if i not in "aeiouAEIOU":
+            return False
+    return True
+def sms_encoding(sms):
+    encoded=""
+    for i in sms:
+        if isvowel(i):
+            encoded+= i+" "
+            continue
+        for j in i:
+            if j not in "aeiouAEIOU":
+                encoded+=j
+        encoded+= " "
+    return encoded
+sms = input("enter your message:").split()
+encoded = sms_encoding(sms)
+print(encoded)
+
+
+P(17):
+
+
+def sod(n):
+    s=0
+    for i in range(1,n):
+        if n%i==0:
+            s+=i
+    return s
+def can(n1,n2):
+    if sod(n1)==n2 and sod(n2)==n1:
+        return True
+    return False
+
+n1=int(input("enter an number:"))
+n2=int(input("enter an number:"))
+if  can(n1,n2):
+    print(f"{n1} and {n2} are amicable pairs")
+else:
+          print(f"{n1} and {n2} are not amicable pairs")
+          
+
+P(13):
+
+
+n1=input("enter a senctence:").replace('','')
+n2=input("enter a sentence:").replace('','')
+c=[]
+for i in n1:
+    if i in n2:
+        c.append(i)
+if len(c)==0:
+    print(-1)
+    exit(0)
+    
+print("".join(c))
+
+
+
+P()
